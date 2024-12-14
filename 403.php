@@ -1,8 +1,6 @@
 <?php
 header('HTTP/1.1 403 Forbidden');
-
 error_reporting(0);
-
 $logFile = 'attacks.log';
 $logData = sprintf(
     ">>>>>>>>>>> %s <<<<<<<<<<<\n".
@@ -18,10 +16,9 @@ $logData = sprintf(
     $_SERVER['HTTP_COOKIE'] ?? 'NONE',
     http_build_query($_POST) ?? 'NONE'
 );
-
 @file_put_contents($logFile, $logData, FILE_APPEND);
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
